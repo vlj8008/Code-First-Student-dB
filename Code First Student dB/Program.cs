@@ -11,16 +11,23 @@ namespace Code_First_Student_dB
         {
             using (SchoolContext ctx = new SchoolContext())
             {
-                var stud = new Student() { StudentName = "Bill" };
+                Console.WriteLine("Please enter your name");
+                string fname = Console.ReadLine();
+                Console.WriteLine("What is your last name");
+                string lname = Console.ReadLine();
+                Console.WriteLine("What is your height?");
+                int height = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("What is your weight?");
+                int weight = Convert.ToInt32(Console.ReadLine());
 
-                //ctx.Students.Add(stud);
-                //ctx.SaveChanges();
-                //Console.WriteLine(stud.StudentName);
+                var stud = new Student() { StudentName = fname, StudentLName = lname,Height = height, Weight=weight };
 
-                var stud2 = new Student() { StudentFName="Bob",Height=160,Weight=60 };
-                ctx.Students.Add(stud2);
+                ctx.Students.Add(stud);
                 ctx.SaveChanges();
-                Console.WriteLine(stud2.StudentFName + stud2.Height.ToString() + stud2.Weight.ToString());
+                Console.WriteLine("Your name is:" + stud.StudentName + stud.StudentLName);
+                Console.WriteLine("Your height is: " + stud.Height.ToString());
+                Console.WriteLine("Your weight is: "+ stud.Weight.ToString());
+                Console.ReadLine();
             }
         }
     }
