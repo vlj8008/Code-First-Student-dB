@@ -2,4 +2,8 @@
 
 ## Description:
 
-I created this simple console app to practise the code-first approach. The app generated a database from my student class, and then added a student to the database. 
+A console app created using the code-first approach. App takes in user input, creates an entry in the database, and then displays to the user what they entered. 
+
+## Future Improvements:
+
+Code some try catch blocks so if exceptions occur app can deal with it gracefully rather than crashing.
